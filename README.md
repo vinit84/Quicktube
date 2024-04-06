@@ -50,17 +50,17 @@ The project follows an agile development methodology, fostering continuous impro
 
 ## Gantt Chart
 
-Task Description | Start Date | End Date | Duration (Days) | Dependencies
---- | --- | --- | --- | ---
-Project Kickoff | 2023-12-15 | 2023-12-15 | 1 | -
-Platform Architecture Design | 2023-12-16 | 2023-12-22 | 7 | Project Kickoff
-Front-end Development | 2023-12-23 | 2024-01-10 | 15 | Platform Architecture Design
-Back-end Development | 2024-01-11 | 2024-01-28 | 15 | Platform Architecture Design
-YouTube API Integration | 2024-01-29 | 2024-02-07 | 10 | Front-end Development
-Notification System Integration | 2024-02-08 | 2024-02-18 | 10 | Back-end Development
-Testing and Bug Fixing | 2024-02-19 | 2024-03-03 | 10 | YouTube API Integration, Notification System Integration
-User Acceptance Testing | 2024-03-04 | 2024-03-13 | 10 | Testing and Bug Fixing
-Deployment | 2024-03-14 | 2024-03-14 | 1 | User Acceptance Testing
+| Task Description | Start Date | End Date | Duration (Days) | Dependencies |
+| --- | --- | --- | --- | --- |
+| Project Kickoff | 2023-12-15 | 2023-12-15 | 1 | - |
+| Platform Architecture Design | 2023-12-16 | 2023-12-22 | 7 | Project Kickoff |
+| Front-end Development | 2023-12-23 | 2024-01-10 | 15 | Platform Architecture Design |
+| Back-end Development | 2024-01-11 | 2024-01-28 | 15 | Platform Architecture Design |
+| YouTube API Integration | 2024-01-29 | 2024-02-07 | 10 | Front-end Development |
+| Notification System Integration | 2024-02-08 | 2024-02-18 | 10 | Back-end Development |
+| Testing and Bug Fixing | 2024-02-19 | 2024-03-03 | 10 | YouTube API Integration, Notification System Integration |
+| User Acceptance Testing | 2024-03-04 | 2024-03-30 | 27 | Testing and Bug Fixing |
+| Deployment | 2024-03-31 | 2024-03-31 | 1 | User Acceptance Testing |
 
 ## Post-Project Completion
 
