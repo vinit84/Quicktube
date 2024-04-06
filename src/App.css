@@ -1,0 +1,142 @@
+@font-face {
+  font-family: 'Gilroy-Bold';
+  src: local('Gilroy-Bold'), url(../public/Gilroy-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-Regular';
+  src: local('Gilroy-Regular'), url(../public/Gilroy-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-Light';
+  src: local('Gilroy-Light'), url(../public/Gilroy-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-Medium';
+  src: local('Gilroy-Medium'), url(../public/Gilroy-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Gilroy-MediumItalic';
+  src: local('Gilroy-MediumItalic'), url(../public/Gilroy-MediumItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-SemiBold';
+  src: local('Gilroy-SemiBold'), url(../public/Gilroy-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-ExtraBold';
+  src: local('Gilroy-ExtraBold'), url(../public/Gilroy-ExtraBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-Black';
+  src: local('Gilroy-Black'), url(../public/Gilroy-Black.ttf) format('truetype');
+}
+
+.Gilroy-Bold { font-family: 'Gilroy-Bold', sans-serif; }
+.Gilroy-Regular { font-family: 'Gilroy-Regular', sans-serif; }
+.Gilroy-Light { font-family: 'Gilroy-Light', sans-serif; }
+.Gilroy-Medium { font-family: 'Gilroy-Medium', sans-serif; }
+.Gilroy-MediumItalic { font-family: 'Gilroy-MediumItalic', sans-serif; }
+.Gilroy-SemiBold { font-family: 'Gilroy-SemiBold', sans-serif; }
+.Gilroy-ExtraBold { font-family: 'Gilroy-ExtraBold', sans-serif; }
+.Gilroy-Black { font-family: 'Gilroy-Black', sans-serif; }
+.Gilroy-ExtraLight { font-family: 'Gilroy-ExtraLight', sans-serif; }
+.Gilroy-Thin { font-family: 'Gilroy-Thin', sans-serif; }
+.Gilroy-Heavy { font-family: 'Gilroy-Heavy', sans-serif; }
+.Gilroy-Italic { font-family: 'Gilroy-Italic', sans-serif; }
+.Gilroy-BoldItalic { font-family: 'Gilroy-BoldItalic', sans-serif; }
+
+  
+  .videos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .video {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px; /* Adjust based on your layout */
+  }
+  
+  .video-preview {
+    position: relative;
+  }
+  
+  .video-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; /* Hide thumbnail by default */
+  }
+  
+  .video-info {
+    margin-top: 10px;
+  }
+  
+  .tags {
+    margin-top: 10px;
+  }
+  
+  .tag {
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin-right: 5px;
+    display: inline-block;
+  }
+
+  .nav-link {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #5E17EB; /* Change this color if needed */
+    bottom: -5px; /* Adjust this value based on your design */
+    left: 0;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .scroll-container {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+
+  #bg{
+  background-color: black
+  }
+  .high-z-index {
+    z-index: 1050; /* Adjust the value based on your needs */
+    position: relative; /* or 'fixed', depending on your layout */
+  }
+
+  /* Add this CSS to your stylesheet (you might need to create a separate .css file or include it within a <style> tag if you're using inline styles) */
+/* .smooth-transition {
+  transition: background-color 0.3s ease, color 0.3s ease;
+} */
+  
+  
+  
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  
