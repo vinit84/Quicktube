@@ -66,12 +66,6 @@ The project follows an agile development methodology, fostering continuous impro
 
 Upon completion, the QuickTube platform aims to provide a streamlined video approval process, reducing the burden on YouTubers and enhancing collaboration between content creators and editors. Continuous support and updates will be provided to address user feedback and ensure long-term usability and effectiveness.
 
-## Requirements
-
-- Web server for hosting
-- Internet connectivity
-- Development computers with necessary software
-
 ## Project Links
 
 - [GitHub Repository](https://github.com/vinit84/Quicktube)
