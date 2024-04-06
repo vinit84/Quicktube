@@ -65,3 +65,34 @@ The project follows an agile development methodology, fostering continuous impro
 ## Post-Project Completion
 
 Upon completion, the QuickTube platform aims to provide a streamlined video approval process, reducing the burden on YouTubers and enhancing collaboration between content creators and editors. Continuous support and updates will be provided to address user feedback and ensure long-term usability and effectiveness.
+
+## Requirements
+
+- Web server for hosting
+- Internet connectivity
+- Development computers with necessary software
+
+## Project Links
+
+- [GitHub Repository](https://github.com/vinit84/Quicktube)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgements
+
+We would like to express our gratitude to the following individuals and communities who have contributed to the success of the QuickTube project:
+
+- **QuickTube Team:** Thank you to all team members for their dedication and collaborative efforts in bringing this project to fruition.
+
+- **React.js, Node.js, MongoDB:** Special thanks to the developers and maintainers of these powerful technologies that form the backbone of our project.
+
+- **AWS:** We would like to thank AWS for providing reliable hosting services for our project.
+
+- **Project Stakeholders:** Gratitude to the YouTubers, editors, and users who played a crucial role in shaping the direction of QuickTube.
+
+- **Users and Supporters:** Last but not least, our sincere thanks to the users and supporters of QuickTube. Your feedback and encouragement motivate us to continuously improve our platform.
+
+Thank you all for being part of the QuickTube journey!
+
