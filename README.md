@@ -5,7 +5,6 @@
 
 - Vinit Upadhyay [TCS2324084] (Team Lead)
 - Noel James [TCS2324050]
-- Vedant Ghadigaonkar [TCS2324016]
 
 ## Project Description
 
