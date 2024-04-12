@@ -3,6 +3,7 @@ import Intropage from "./IntroPage"
 import Designs from "./Designs"
 import Feature from './Feature'
 import BackgroundBeams from './UI/backgroundBeams'
+import TabsDemo from './UI_Components/tabs'
 
 
 
@@ -17,6 +18,9 @@ function Home() {
     </div>
     <div>
     <Feature/>
+    </div>
+    <div>
+      <TabsDemo/>
     </div>
     <BackgroundBeams/>
     

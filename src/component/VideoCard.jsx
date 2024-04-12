@@ -83,15 +83,16 @@ const VideoCard = ({ video,channelId, basePath,userRole }) => {
             alt="Thumbnail"
           />
         </div>
-        <div className="flex text-white mt-3">
-          <div className="flex flex-col ml-3 overflow-hidden">
+        <div className="flex flex-col text-white mt-3">
+          <div className="flex flex-col ml-3 overflow-hidden ">
             <span className="text-sm font-bold line-clamp-2">
               {video?.title}
             </span>
-            <div className="flex text-[12px] font-semibold text-white/[0.7] truncate overflow-hidden mt-2 items-center">
+        
+          </div>
+          <div className="flex text-[12px] font-semibold  text-white/[0.7] truncate overflow-hidden mt-2 items-end justify-end">
               <div className="ml-auto">{renderApprovalStatus()}</div>
             </div>
-          </div>
         </div>
       </div>
     </Link>

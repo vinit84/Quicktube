@@ -47,7 +47,7 @@ export default function Contact() {
   return (
     <div className="bg-black w-screen h-screen">
       <div className=" mx-auto px-4 sm:py-10 sm:px-6 lg:px-8">
-        <div className="relative w-fit h-screen bg-black shadow-xl">
+        <div className="relative w-fit h-fit bg-black shadow-xl">
           <ToastContainer />
           {/* <h2 className="sr-only">Contact us</h2> */}
 
@@ -86,7 +86,7 @@ export default function Contact() {
             </div>
 
             {/* Contact form */}
-            <div className="py-10 bg-neutral-950 h-full rounded-lg lg:px-6  px-10 sm:px-10 lg:col-span-1 xl:p-12 lg:mr-6  md:mx-20 lg:mx-0 md:mt-20 lg:mt-0">
+            <div className="py-10 bg-neutral-950 h-full rounded-2xl lg:px-6  px-10 sm:px-10 lg:col-span-1 xl:p-12 lg:mr-6  md:mx-20 lg:mx-0 md:mt-20 lg:mt-0">
               {/* <h3 className="text-lg Gilroy-Medium text-white">
                 Send us a message
               </h3> */}
@@ -170,7 +170,7 @@ export default function Contact() {
                     />
                   </div>
                 </div>
-                <div className="sm:col-span-2">
+                {/* <div className="sm:col-span-2">
                   <label
                     htmlFor="subject"
                     className="block text-sm Gilroy-Medium text-white"
@@ -185,7 +185,7 @@ export default function Contact() {
                       className="py-2 px-4 block w-full bg-neutral-950 border-[1px] border-white shadow-sm text-white focus:ring-indigo-500 focus:border-indigo-500  rounded-md"
                     />
                   </div>
-                </div>
+                </div> */}
                 <div className="sm:col-span-2">
                   <div className="flex justify-between">
                     <label

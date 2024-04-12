@@ -72,6 +72,7 @@ export default function Pricing() {
   const [userId, setUserId] = useState("");
   const [userName, setUserName] = useState("");
   const [planType, setPlanType] = useState("");
+  const [planPrice, setPlanPrice] = useState("");
 
   useEffect(() => {
     // Inbuilt function to check if user is logged in or not
@@ -84,16 +85,18 @@ export default function Pricing() {
         userRef.on("value", (snapshot) => {
           const userVal = snapshot.val();
           if (userVal) {
-            // Use optional chaining and nullish coalescing to avoid errors
             const planType = userVal.subscription?.planType ?? "";
+            const planPrice = userVal.subscription?.planPrice ?? "";
             setPlanType(planType);
+            setPlanPrice(planPrice);
           }
         });
       } else {
         // setting userID and userName if user is not present
         setUserId("");
         setUserName("");
-        setPlanType(""); // Ensure planType is reset when there is no user
+        setPlanPrice(""); 
+        setPlanType("");
       }
     });
   }, [userId]);
@@ -143,10 +146,14 @@ export default function Pricing() {
         </div>
         <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-3 ">
           {tiers.map((tier) => (
-            <div
-              key={tier.name}
-              className="  rounded-3xl shadow-sm   p-5 Gilroy-SemiBold   bg-neutral-950 drop-shadow-lg border-[1px] border-[#1f2734] shadow-2 hover:shadow-lg dark:bg-dark-2"
-            >
+           <div
+           key={tier.name}
+           className={`rounded-3xl shadow-sm p-5 Gilroy-SemiBold bg-neutral-950 drop-shadow-lg border-[1px] ${
+             parseInt(planPrice) === (isYearlyBilling ? tier.priceYearly : tier.priceMonthly)
+               ? "border-indigo-600" // Smooth indigo border for the purchased plan
+               : "border-[#1f2734]"
+           } shadow-2 hover:shadow-lg dark:bg-dark-2`}
+         >
               <div className="p-6">
                 <h2 className="text-xl leading-6 text-white dark:text-white Gilroy-SemiBold">
                   {tier.name}
@@ -176,9 +183,13 @@ export default function Pricing() {
                       navigate("/login");
                     }
                   }}
-                  className="mt-8 block cursor-pointer w-full bg-[#5E17EB] dark:bg-gray-900 border border-gray-800 dark:border-gray-900 rounded-[10px] py-2 text-md Gilroy-SemiBold text-white hover:text-gray-300 text-center hover:bg-indigo-800 transition duration-300 ease-in-out"
+                  className={`mt-8 block cursor-pointer w-full bg-[#5E17EB] dark:bg-gray-900 border border-gray-800 dark:border-gray-900 rounded-[10px] py-2 text-md Gilroy-SemiBold text-white hover:text-gray-300 text-center hover:bg-indigo-800 transition duration-300 ease-in-out ${
+                    parseInt(planPrice) === (isYearlyBilling ? tier.priceYearly : tier.priceMonthly)
+                      ? "opacity-50 cursor-not-allowed" // Disable the "Buy" button for the purchased plan
+                      : ""
+                  }`}
                 >
-                  Buy {tier.name}
+                   {parseInt(planPrice) === (isYearlyBilling ? tier.priceYearly : tier.priceMonthly) ? "Purchased" : "Buy"} {tier.name}
                 </a>
               </div>
               <div className="pt-1 pb-8 px-6">

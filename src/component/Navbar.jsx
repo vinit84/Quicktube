@@ -14,7 +14,7 @@ function Navbar() {
       if (user) {
         setUserId(user.uid);
         setUserName(user.displayName);
-  
+
         const userRef = firebase.database().ref("users/" + user.uid);
         userRef.on("value", (snapshot) => {
           const userVal = snapshot.val();
@@ -33,19 +33,23 @@ function Navbar() {
     });
   }, [userId]);
 
-  
-
   const navigate = useNavigate();
   const location = useLocation();
-  
 
-  const isLoginPage = location.pathname === "/login" || location.pathname === "/success";
+  const isLoginPage =
+    location.pathname === "/login" || location.pathname === "/success";
 
   return (
     <div>
-      <nav className={`navbar ${isLoginPage ? "justify-center" : "justify-around"} flex border-b-[0.5px] w-screen border-gray-800 items-center px-4 sm:px-8 md:px-20 py-4 sm:py-6 bg-black text-white Gilroy-Medium`}>
+      <nav
+        className={`navbar ${
+          isLoginPage ? "justify-center" : "justify-around"
+        } flex border-b-[0.5px] w-screen border-gray-800 items-center px-4 sm:px-8 md:px-20 py-4 sm:py-6 bg-black text-white Gilroy-Medium`}
+      >
         <div
-          className={`navbar ${isLoginPage ? "pr-0" : "pr-16"} Gilroy-Bold text-2xl mb-[0.5rem] cursor-pointer z-10`}
+          className={`navbar ${
+            isLoginPage ? "pr-0" : "pr-16"
+          } Gilroy-Bold text-2xl mb-[0.5rem] cursor-pointer z-10`}
           onClick={() => navigate("/")}
         >
           <span>
@@ -78,54 +82,54 @@ function Navbar() {
                 </li>
               </ul>
             </div>
-            {
-  !userId ? (
-    <div className="navbar-right flex items-center justify-end z-10">
-    <button
-      className="mr-2 sm:mr-5 text-white nav-link"
-      onClick={() => navigate("/login")}
-    >
-      Login
-    </button>
-    <button
-      className="started bg-[#5E17EB] hover:bg-indigo-800 text-white h-8 sm:h-10 w-20 sm:w-24 md:w-28 rounded-[10px] ml-2 sm:ml-3 Gilroy-Medium transition duration-300 ease-in-out"
-      onClick={() => navigate("/login")}
-    >
-      Get Started
-    </button>
-  </div>
-  ) : subscriptionStatus === "active" ? (
-    <div className="navbar-right flex items-center justify-end z-10">
-      <button
-        className=" bg-[#5E17EB] hover:bg-indigo-800 text-white h-8 sm:h-10 w-28 sm:w-32 md:w-36 rounded-[10px] ml-2 sm:ml-3 Gilroy-Medium transition duration-300 ease-in-out"
-        onClick={() => navigate(userRole === "youtuber" ? "/youtuber" : "/editor")}
-      >
-        Workspace
-      </button>
-      <button
-        className="nav-link  text-white ml-3 sm:ml-5"
-        onClick={() => firebase.auth().signOut()}
-      >
-        Logout
-      </button>
-    </div>
-  ) : (
-    <div className="navbar-right flex items-center justify-end z-10">
-      <button
-        className="mr-2 sm:mr-5 text-white nav-link"
-        onClick={() => navigate("/pricing")}
-      >
-        Upgrade
-      </button>
-      <button
-        className="started bg-[#5E17EB] hover:bg-indigo-800 text-white h-8 sm:h-10 w-20 sm:w-24 md:w-28 rounded-[10px] ml-2 sm:ml-3 Gilroy-Medium transition duration-300 ease-in-out"
-        onClick={() => firebase.auth().signOut()}
-      >
-        Logout
-      </button>
-    </div>
-  )
-}
+            {!userId ? (
+              <div className="navbar-right flex items-center justify-end z-10">
+                <button
+                  className="mr-2 sm:mr-5 text-white nav-link"
+                  onClick={() => navigate("/login")}
+                >
+                  Login
+                </button>
+                <button
+                  className="started bg-[#5E17EB] hover:bg-indigo-800 text-white h-8 sm:h-10 w-20 sm:w-24 md:w-28 rounded-[10px] ml-2 sm:ml-3 Gilroy-Medium transition duration-300 ease-in-out"
+                  onClick={() => navigate("/login")}
+                >
+                  Get Started
+                </button>
+              </div>
+            ) : subscriptionStatus === "active" ? (
+              <div className="navbar-right flex items-center justify-end z-10">
+                <button
+                  className=" bg-[#5E17EB] hover:bg-indigo-800 text-white h-8 sm:h-10 w-28 sm:w-32 md:w-36 rounded-[10px] ml-2 sm:ml-3 Gilroy-Medium transition duration-300 ease-in-out"
+                  onClick={() =>
+                    navigate(userRole === "youtuber" ? "/youtuber" : "/editor")
+                  }
+                >
+                  Workspace
+                </button>
+                <button
+                  className="nav-link  text-white ml-3 sm:ml-5"
+                  onClick={() => firebase.auth().signOut()}
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <div className="navbar-right flex items-center justify-end z-10">
+                <button
+                  className="mr-2 sm:mr-5 text-white nav-link"
+                  onClick={() => navigate("/pricing")}
+                >
+                  Upgrade
+                </button>
+                <button
+                  className="started bg-[#5E17EB] hover:bg-indigo-800 text-white h-8 sm:h-10 w-20 sm:w-24 md:w-28 rounded-[10px] ml-2 sm:ml-3 Gilroy-Medium transition duration-300 ease-in-out"
+                  onClick={() => firebase.auth().signOut()}
+                >
+                  Logout
+                </button>
+              </div>
+            )}
           </>
         )}
       </nav>

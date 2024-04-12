@@ -10,11 +10,36 @@ import {
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import UploadForm from "./UploadForm";
 import { useParams } from "react-router-dom";
-import { getAuth } from "@firebase/auth";
+import { getAuth, signOut } from "@firebase/auth";
+import { ToastContainer, toast } from "react-toastify";
 // import { getDatabase, onValue, ref } from "firebase/database";
 import { app } from "../../firebase/firebaseconfig";
 import VideoDisplay from "../VideoDisplay";
+import { useNavigate } from 'react-router-dom';
 // import EditorsList from "../Youtuber/EditorsList";
+
+
+const notifySuccess = (message) =>
+  toast.success(message, {
+    position: "bottom-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "dark",
+  });
+
+const notifyError = (errorMessage) =>
+  toast.error(errorMessage, {
+    position: "bottom-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "dark",
+  });
 
 const navigation = [
   {
@@ -45,8 +70,23 @@ const navigation = [
 const userNavigation = [
   { name: "Your Profile", href: "#" },
   { name: "Settings", href: "#" },
-  { name: "Sign out", href: "#" },
+  {
+    name: "Sign out",
+    onClick: () => {
+      const auth = getAuth(app);
+      signOut(auth).then(() => {
+        // Sign-out successful.
+        notifySuccess("Sign out successful");
+        // Redirect to login page
+        window.location.href = "/login";
+      }).catch((error) => {
+        // An error happened.
+        notifyError("Sign out error: " + error.message);
+      });
+    }
+  },
 ];
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -72,6 +112,8 @@ function EditorDashboard() {
 
     setNavigationState(updatedNavigationState);
   };
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -172,7 +214,10 @@ function EditorDashboard() {
         <div className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex-1 flex flex-col min-h-0 bg-[#09090b]">
-            <div className="flex items-center h-16 flex-shrink-0 px-4 bg-gray-900">
+          <div
+              className="flex items-center h-16 flex-shrink-0 px-4 bg-gray-900 cursor-pointer"
+              onClick={() => navigate('/')}
+            >
               <img
                 className="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
@@ -274,15 +319,16 @@ function EditorDashboard() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-black ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-black ring-1 ring-white ring-opacity-5 focus:outline-none">
                       {userNavigation.map((item) => (
                         <Menu.Item key={item.name}>
                           {({ active }) => (
                             <a
+                            onClick={item.onClick}
                               href={item.href}
                               className={classNames(
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm text-gray-700"
+                                active ? "bg-gray-900" : "",
+                                "block px-4 py-2 text-sm text-white"
                               )}
                             >
                               {item.name}

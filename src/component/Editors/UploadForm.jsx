@@ -6,6 +6,8 @@ import { app } from "../../firebase/firebaseconfig";
 import { ToastContainer, toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
+import animationData from '../../uploadanimation.json'; 
+import Lottie from 'react-lottie';
 import {
   getStorage,
   ref as storageRef,
@@ -52,6 +54,7 @@ const UploadForm = () => {
   const auth = getAuth();
   const user = auth.currentUser;
   const editorEmail = user ? user.email : null;
+  const [isUploading, setIsUploading] = useState(false);
 
   const handleKeyDown = (e) => {
     // Check if backspace was pressed and input is empty
@@ -119,12 +122,22 @@ const UploadForm = () => {
     return set(videoRef, updatedMetadata);
   };
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true, 
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!editorEmail || !channelId) {
       console.error("Missing editor email or channelId");
       return;
     }
+    setIsUploading(true); 
 
     try {
       // Use the original file names directly without adding a timestamp
@@ -157,11 +170,19 @@ const UploadForm = () => {
       console.error("Upload failed:", error);
       notifyError("Upload failed. Please try again.");
     }
+    finally {
+      setIsUploading(false); // Finish uploading
+    }
   };
 
   return (
     <div className="flex flex-col">
       <ToastContainer />
+      {isUploading && (
+      <div className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+        <Lottie options={defaultOptions} height={200} width={200} />
+      </div>
+    )}
       <form onSubmit={handleSubmit} method="post" enctype="multipart/form-data">
         <div className="flex flex-row">
           <div>
