@@ -36,10 +36,9 @@ The project follows an agile development methodology, fostering continuous impro
 
 - Front-end: React.js , Tailwind CSS
 - Back-end: Node.js and Express
-- Database: MongoDB
+- Database: Firebase Realtime Database
 - User Authentication: OAuth for YouTube API
 - Notification Services: Twilio API (for WhatsApp) or Slack API
-- Hosting: AWS
 
 ## System/Hardware Requirements
 
