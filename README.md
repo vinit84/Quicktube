@@ -34,7 +34,7 @@ The project follows an agile development methodology, fostering continuous impro
 
 ## Technology Stack
 
-- Front-end: React.js
+- Front-end: React.js , Tailwind CSS
 - Back-end: Node.js and Express
 - Database: MongoDB
 - User Authentication: OAuth for YouTube API
