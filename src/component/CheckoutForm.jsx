@@ -54,7 +54,7 @@ const CheckoutForm = () => {
     // Call backend endpoint to initiate the Stripe session
     console.log("Sending plan to backend:", plan);
     console.log(setCustomerDetails);
-    fetch("http://localhost:5000/api/v1/create-subscription-checkout-session", {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/create-subscription-checkout-session`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
