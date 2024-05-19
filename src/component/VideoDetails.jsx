@@ -34,7 +34,7 @@ const VideoDetails = () => {
     if (!isUploaded) {
       // Check if the video has not been uploaded yet
       setIsApproving(true); // Disable the button
-      window.location.href = `http://localhost:5000/login?channelId=${channelId}&videoId=${videoId}`;
+      window.location.href = `http://quicktube-b2aa2.firebaseapp.com/login?channelId=${channelId}&videoId=${videoId}`;
     }
   };
 
