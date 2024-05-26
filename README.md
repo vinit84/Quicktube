@@ -68,7 +68,7 @@ Upon completion, the QuickTube platform aims to provide a streamlined video appr
 
 ## Project Links
 
-- [GitHub Repository](https://github.com/vinit84/Quicktube)
+- [GitHub Repository](https://quicktube-b2aa2.firebaseapp.com//Quicktube)
 
 ## License
 
