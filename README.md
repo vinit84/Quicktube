@@ -10,7 +10,7 @@
 
 The QuickTube (YouTube Layer) project addresses a common challenge faced by content creators and editors in the YouTube ecosystem. It streamlines the video review and approval process between YouTubers and editors, eliminating cumbersome download and upload processes.
 - **Project Duration:** 3 Months
-- **Deployment URL:** [https://quicktube.tech](https://quicktube.tech)
+- **Deployment URL:** [https://quicktube-b2aa2.firebaseapp.com/]([https://quicktube.tech](https://quicktube-b2aa2.firebaseapp.com/))
 
 ## Availability in Market
 
