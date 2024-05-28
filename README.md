@@ -3,8 +3,8 @@
 
 ## Team Members
 
-- Vinit Upadhyay [TCS2324084] (Team Lead)
-- Noel James [TCS2324050]
+- Vinit Upadhyay (Team Lead)
+- Noel James
 
 ## Project Description
 
