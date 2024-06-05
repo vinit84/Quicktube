@@ -80,9 +80,9 @@ We would like to express our gratitude to the following individuals and communit
 
 - **QuickTube Team:** Thank you to all team members for their dedication and collaborative efforts in bringing this project to fruition.
 
-- **React.js :** Special thanks to the developers and maintainers of these powerful technologies that form the backbone of our project.
+- **React.js , Tailwind CSS :** Special thanks to the developers and maintainers of these powerful technologies that form the backbone of our project.
 
-- **AWS:** We would like to thank AWS for providing reliable hosting services for our project.
+- **Firebase:** We would like to thank AWS for providing reliable hosting services for our project.
 
 - **Project Stakeholders:** Gratitude to the YouTubers, editors, and users who played a crucial role in shaping the direction of QuickTube.
 
