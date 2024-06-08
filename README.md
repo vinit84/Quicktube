@@ -1,11 +1,6 @@
 
 # QuickTube (YouTube Layer) Project
 
-## Team Members
-
-- Vinit Upadhyay (Team Lead)
-- Noel James
-
 ## Project Description
 
 The QuickTube (YouTube Layer) project addresses a common challenge faced by content creators and editors in the YouTube ecosystem. It streamlines the video review and approval process between YouTubers and editors, eliminating cumbersome download and upload processes.
